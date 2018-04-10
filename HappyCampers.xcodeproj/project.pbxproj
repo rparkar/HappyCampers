@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D6BA982303B69DB754B35D7 /* Pods_HappyCampers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC122E3C4B3049AA1135D1BD /* Pods_HappyCampers.framework */; };
 		6C168B42207AAA02003DD9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168B41207AAA02003DD9F5 /* AppDelegate.swift */; };
 		6C168B47207AAA02003DD9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C168B45207AAA02003DD9F5 /* Main.storyboard */; };
 		6C168B49207AAA04003DD9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C168B48207AAA04003DD9F5 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		253A8F1E6DB13A699FDC7112 /* Pods-HappyCampers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCampers.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyCampers/Pods-HappyCampers.release.xcconfig"; sourceTree = "<group>"; };
 		6C168B3E207AAA02003DD9F5 /* HappyCampers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyCampers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C168B41207AAA02003DD9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C168B46207AAA02003DD9F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		6C168B5C207AC01A003DD9F5 /* WhiteBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderTextField.swift; sourceTree = "<group>"; };
 		6C168B5E207AC285003DD9F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6C168B61207C6AA1003DD9F5 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		9A0914B394790AD9D3E593E5 /* Pods-HappyCampers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCampers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyCampers/Pods-HappyCampers.debug.xcconfig"; sourceTree = "<group>"; };
+		FC122E3C4B3049AA1135D1BD /* Pods_HappyCampers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyCampers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6BA982303B69DB754B35D7 /* Pods_HappyCampers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				6C168B40207AAA02003DD9F5 /* HappyCampers */,
 				6C168B3F207AAA02003DD9F5 /* Products */,
+				81740917D063B6AB4E10F345 /* Pods */,
+				E0FA03548F288B5A5A5903E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +118,23 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		81740917D063B6AB4E10F345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0914B394790AD9D3E593E5 /* Pods-HappyCampers.debug.xcconfig */,
+				253A8F1E6DB13A699FDC7112 /* Pods-HappyCampers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0FA03548F288B5A5A5903E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC122E3C4B3049AA1135D1BD /* Pods_HappyCampers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C168B50207AAA04003DD9F5 /* Build configuration list for PBXNativeTarget "HappyCampers" */;
 			buildPhases = (
+				9B0554328C688C0A4D7D4037 /* [CP] Check Pods Manifest.lock */,
 				6C168B3A207AAA02003DD9F5 /* Sources */,
 				6C168B3B207AAA02003DD9F5 /* Frameworks */,
 				6C168B3C207AAA02003DD9F5 /* Resources */,
+				4586AA94F0A9B1CA4BFF3F8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +202,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4586AA94F0A9B1CA4BFF3F8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HappyCampers/Pods-HappyCampers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyCampers/Pods-HappyCampers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0554328C688C0A4D7D4037 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HappyCampers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C168B3A207AAA02003DD9F5 /* Sources */ = {
@@ -330,10 +397,12 @@
 		};
 		6C168B51207AAA04003DD9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A0914B394790AD9D3E593E5 /* Pods-HappyCampers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HappyCampers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,10 +416,12 @@
 		};
 		6C168B52207AAA04003DD9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253A8F1E6DB13A699FDC7112 /* Pods-HappyCampers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HappyCampers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

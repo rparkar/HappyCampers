@@ -1,0 +1,6 @@
+framework module Pods_HappyCampers {
+  umbrella header "Pods-HappyCampers-umbrella.h"
+
+  export *
+  module * { export * }
+}
