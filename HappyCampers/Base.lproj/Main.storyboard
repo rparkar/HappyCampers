@@ -225,10 +225,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1tX-RD-m23"/>
                     </view>
+                    <connections>
+                        <outlet property="photoDescriptionLabel" destination="B2Y-VN-zFn" id="R9P-mY-1L8"/>
+                        <outlet property="photoTitleLabel" destination="mKM-rT-KoB" id="bPb-t0-7Ao"/>
+                        <outlet property="selectedImage" destination="MYx-ac-V5O" id="jtJ-Ds-FHV"/>
+                        <outlet property="shotByLabel" destination="pCB-SH-gBe" id="1ye-Hm-V9A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34d-tj-ajN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="34"/>
+            <point key="canvasLocation" x="721" y="25"/>
         </scene>
     </scenes>
     <resources>

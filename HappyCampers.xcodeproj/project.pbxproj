@@ -16,6 +16,7 @@
 		6C168B5B207AB851003DD9F5 /* SearchImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168B5A207AB851003DD9F5 /* SearchImageCell.swift */; };
 		6C168B5D207AC01A003DD9F5 /* WhiteBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168B5C207AC01A003DD9F5 /* WhiteBorderTextField.swift */; };
 		6C168B5F207AC286003DD9F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168B5E207AC285003DD9F5 /* Constants.swift */; };
+		6C168B62207C6AA1003DD9F5 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168B61207C6AA1003DD9F5 /* Emotion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6C168B5A207AB851003DD9F5 /* SearchImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageCell.swift; sourceTree = "<group>"; };
 		6C168B5C207AC01A003DD9F5 /* WhiteBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderTextField.swift; sourceTree = "<group>"; };
 		6C168B5E207AC285003DD9F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6C168B61207C6AA1003DD9F5 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		6C168B55207AAADD003DD9F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C168B61207C6AA1003DD9F5 /* Emotion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				6C168B42207AAA02003DD9F5 /* AppDelegate.swift in Sources */,
 				6C168B59207AB01B003DD9F5 /* DetailViewController.swift in Sources */,
 				6C168B5F207AC286003DD9F5 /* Constants.swift in Sources */,
+				6C168B62207C6AA1003DD9F5 /* Emotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

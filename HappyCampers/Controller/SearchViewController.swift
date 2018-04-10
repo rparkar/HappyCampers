@@ -12,7 +12,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     //outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var searchTextField: WhiteBorderTextField!
     
     //variables
