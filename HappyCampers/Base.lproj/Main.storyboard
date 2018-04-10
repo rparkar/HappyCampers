@@ -41,6 +41,9 @@
                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="userEnteredText:" destination="BYZ-38-t0r" eventType="editingChanged" id="wEw-dZ-XMJ"/>
+                                        </connections>
                                     </textField>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-hr-Ouj">
                                         <rect key="frame" x="0.0" y="134" width="375" height="513"/>
@@ -60,7 +63,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopesLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uXM-2b-JVC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
                                                     </subviews>
@@ -101,7 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="9vB-hr-Ouj" id="TTf-i9-apw"/>
-                        <outlet property="searchTextField" destination="b4H-R9-nXn" id="s7s-Wn-Af4"/>
+                        <outlet property="searchTextField" destination="b4H-R9-nXn" id="0so-Zb-Nr1"/>
                         <segue destination="f17-65-865" kind="show" identifier="detailViewController" id="68A-Nb-mjC"/>
                     </connections>
                 </viewController>

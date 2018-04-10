@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -15,14 +16,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var searchTextField: WhiteBorderTextField!
     
     //variables
+    public private (set) var searchedText: String? = nil
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         
         //customised placeholder text
         searchTextField.attributedPlaceholder = placeholder
@@ -30,6 +31,26 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func userEnteredText(_ sender: Any) {
+        
+        print("user stopped typing")
+        initData()
+        retrieveURL(searchText: searchedText!) { (success) in
+            
+            if success {
+                print("recived URL")
+            } else {
+                
+            }
+        }
+    }
+
+    
+    func initData() {
+        
+        searchedText = searchTextField.text
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -51,6 +72,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         performSegue(withIdentifier: "detailViewController", sender: self)
     }
     
-   
+    func retrieveURL(searchText: String, completionHandler: @escaping CompletionHandler){
+        
+        Alamofire.request(getFlickrURL(apiKey: API_KEY, searchText: searchText)).responseJSON { (response) in
+            
+            print("we are here")
+        }
+        
+    }
 
 }
