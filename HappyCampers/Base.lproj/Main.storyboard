@@ -74,6 +74,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="uXM-2b-JVC" secondAttribute="bottom" id="VaO-uF-3LK"/>
                                                     <constraint firstItem="uXM-2b-JVC" firstAttribute="leading" secondItem="EvF-qK-Wmo" secondAttribute="leading" id="gpW-sa-5g3"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="imageCell" destination="uXM-2b-JVC" id="Prb-fI-h9o"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -18,6 +19,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     //variables
     public private (set) var searchedText: String? = nil
     var imageURLArray = [String]()
+    var imageArray = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +39,24 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         print("user stopped typing")
         initData()
-        imageURLArray = []
+
         retrieveURL(searchText: searchedText!) { (success) in
             
+            
             if success {
-                print("\(self.imageURLArray)")
+                self.retrieveImageFromURL(completionHandler: { (success) in
+                    
+                    if success {
+                        
+                        self.collectionView.reloadData()
+                    }
+                    
+                })
 
             } else {
                 
             }
-            print(self.imageURLArray.count)
+            //print(self.imageURLArray.count)
         }
         
        
@@ -60,13 +70,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchImageCell", for: indexPath) as? SearchImageCell else { return UICollectionViewCell()
         }
+        
+        let imageAtIndex = imageArray[indexPath.row]
+        cell.imageCell.image = imageAtIndex
         
         return cell
     }
@@ -81,7 +94,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func retrieveURL(searchText: String, completionHandler: @escaping CompletionHandler) {
 
-       imageURLArray = [" test"]
+        imageURLArray = []
         Alamofire.request(getFlickrURL(apiKey: API_KEY, searchText: searchText)).responseJSON { (response) in
             
             guard let json = response.result.value as? Dictionary<String,AnyObject> else {return}
@@ -103,7 +116,29 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             completionHandler(true)
             
         }
-        print("\(imageURLArray)")
+       // print("\(imageURLArray)")
+        
+    }
+    
+    func retrieveImageFromURL(completionHandler: @escaping CompletionHandler) {
+        
+        imageArray = []
+        
+        for url in imageURLArray {
+            
+            Alamofire.request(url).responseImage { (response) in
+                
+                guard let image = response.result.value else { return}
+                self.imageArray.append(image)
+                
+                
+                if self.imageArray.count == self.imageURLArray.count {
+                    completionHandler(true)
+                }
+                
+                
+            }
+        }
         
     }
 
