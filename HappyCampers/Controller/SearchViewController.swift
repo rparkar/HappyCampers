@@ -17,7 +17,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     //variables
     public private (set) var searchedText: String? = nil
-
+    var imageURLArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         //customised placeholder text
         searchTextField.attributedPlaceholder = placeholder
         
+        
         // Do any additional setup after loading the view.
     }
 
@@ -36,14 +37,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         print("user stopped typing")
         initData()
+        imageURLArray = []
         retrieveURL(searchText: searchedText!) { (success) in
             
             if success {
-                print("recived URL")
+                print("\(self.imageURLArray)")
+
             } else {
                 
             }
+            print(self.imageURLArray.count)
         }
+        
+       
     }
 
     
@@ -72,12 +78,32 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         performSegue(withIdentifier: "detailViewController", sender: self)
     }
     
-    func retrieveURL(searchText: String, completionHandler: @escaping CompletionHandler){
-        
+    
+    func retrieveURL(searchText: String, completionHandler: @escaping CompletionHandler) {
+
+       imageURLArray = [" test"]
         Alamofire.request(getFlickrURL(apiKey: API_KEY, searchText: searchText)).responseJSON { (response) in
             
-            print("we are here")
+            guard let json = response.result.value as? Dictionary<String,AnyObject> else {return}
+            
+            let dictPhoto = json["photos"] as! Dictionary<String, AnyObject>
+            let photoDictArray = dictPhoto["photo"] as! [Dictionary<String, AnyObject>]
+            
+
+            for photo in photoDictArray {
+                
+                let postURL = "https://farm\(photo["farm"]!).staticflickr.com/\(photo["server"]!)/\(photo["id"]!)_\(photo["secret"]!)_h_d.jpg"
+                
+                self.imageURLArray.append(postURL)
+             //   print(self.imageURLArray)
+          
+                
+            }
+            
+            completionHandler(true)
+            
         }
+        print("\(imageURLArray)")
         
     }
 

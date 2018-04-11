@@ -18,6 +18,8 @@ let API_KEY = "548335eec518c65ada3111b3f1bcb4bd"
 
 func getFlickrURL(apiKey: String, searchText: String) -> String {
     
-    return "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(API_KEY)&text=\(searchText)&format=json&nojsoncallback=1"
+    return "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(API_KEY)&text=\(searchText)&per_page=50&format=json&nojsoncallback=1"
     
 }
+
+
