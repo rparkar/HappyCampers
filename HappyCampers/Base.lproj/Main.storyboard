@@ -62,7 +62,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopesLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uXM-2b-JVC">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopesLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uXM-2b-JVC">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
