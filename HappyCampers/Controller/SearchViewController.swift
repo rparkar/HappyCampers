@@ -88,7 +88,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "detailViewController", sender: self)
+        let image1 = imageArray[indexPath.row]
+        performSegue(withIdentifier: "detailViewController", sender: image1)
     }
     
     

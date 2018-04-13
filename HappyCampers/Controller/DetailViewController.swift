@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var photoTitleLabel: UILabel!
     
     //variables
-    
+    var image1 = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     }
 
     func setUpView() {
-        
+        selectedImage.image = image1
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
