@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
     
     //variables
     var image1 = UIImage()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     public private (set) var searchedText: String? = nil
     var imageURLArray = [String]()
     var imageArray = [UIImage]()
+    var displayImage = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let imageAtIndex = imageArray[indexPath.row]
         cell.imageCell.image = imageAtIndex
+        DataService.instance.setImage(displayImage: imageAtIndex)
         
         return cell
     }
@@ -87,7 +89,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        //tido
         let image1 = imageArray[indexPath.row]
         performSegue(withIdentifier: "detailViewController", sender: image1)
     }
@@ -143,4 +145,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
 
+}
+
+extension SearchViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let desination = segue.destination as? DetailViewController else { return}
+        //if nil
+        desination.image1 =  DataService.instance.displayImage!
+    }
+    
 }

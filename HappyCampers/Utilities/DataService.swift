@@ -6,19 +6,19 @@
 //  Copyright © 2018 Rehan Parkar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DataService {
     
     static let instance = DataService()
     
     public private (set) var photographerName = ""
-    public private (set) var displayImage = ""
+    public private (set) var displayImage: UIImage? = nil
     public private (set) var photoTitle = ""
     public private (set) var photoDescription = ""
     //user location:
     
-    func setData(displayImage: String, photoTitle:String, photographerName: String, photoDescription: String) {
+    func setData(displayImage: UIImage, photoTitle:String, photographerName: String, photoDescription: String) {
         
         self.displayImage = displayImage
         self.photoTitle = photoTitle
@@ -26,6 +26,9 @@ class DataService {
         self.photoDescription = photoDescription
     }
     
+    func setImage(displayImage: UIImage) {
+        self.displayImage = displayImage
+    }
 
     
     
