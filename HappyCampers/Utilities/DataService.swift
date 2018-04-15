@@ -18,9 +18,9 @@ class DataService {
     public private (set) var photoDescription = ""
     //user location:
     
-    func setData(displayImage: UIImage, photoTitle:String, photographerName: String, photoDescription: String) {
+    func setData(photoTitle:String, photographerName: String, photoDescription: String) {
         
-        self.displayImage = displayImage
+       // self.displayImage = displayImage
         self.photoTitle = photoTitle
         self.photographerName = photographerName
         self.photoDescription = photoDescription

@@ -37,8 +37,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     
     @IBAction func userEnteredText(_ sender: Any) {
-        
-        print("user stopped typing")
+
         initData()
 
         retrieveURL(searchText: searchedText!) { (success) in
@@ -109,6 +108,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             for photo in photoDictArray {
                 
                 let postURL = "https://farm\(photo["farm"]!).staticflickr.com/\(photo["server"]!)/\(photo["id"]!)_\(photo["secret"]!)_h_d.jpg"
+                let title = "\(photo["title"]!)"
+                
+//                DataService.instance.setData(displayImage: UIImage(), photoTitle: title, photographerName: "Rehan Parkar", photoDescription: "photo description")
+                
+                DataService.instance.setData(photoTitle: title, photographerName: "RehanParkar", photoDescription: "photo description")
+                
                 
                 self.imageURLArray.append(postURL)
              //   print(self.imageURLArray)
@@ -154,6 +159,7 @@ extension SearchViewController {
         guard let desination = segue.destination as? DetailViewController else { return}
         //if nil
         desination.image1 =  DataService.instance.displayImage!
+        desination.photoTitleLabel.text = DataService.instance.photoTitle
     }
     
 }

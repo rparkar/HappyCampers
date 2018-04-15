@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     
     //variables
     var image1 = UIImage()
+    var titleL: String = ""
     
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class DetailViewController: UIViewController {
 
     func setUpView() {
         selectedImage.image = image1
+        photoTitleLabel.text = titleL
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
