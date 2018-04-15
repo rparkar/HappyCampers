@@ -17,7 +17,7 @@ class DataService {
     public private (set) var photoTitle = ""
     public private (set) var photoDescription = ""
     //user location:
-    
+
     func setData(photoTitle:String, photographerName: String, photoDescription: String) {
         
        // self.displayImage = displayImage

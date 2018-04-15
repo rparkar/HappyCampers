@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     
     //variables
     var image1 = UIImage()
-    var titleL: String = ""
+    var titleL: String?
     
     
     override func viewDidLoad() {

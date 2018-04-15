@@ -65,7 +65,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func initData() {
         
+        //if not nil todo
         searchedText = searchTextField.text
+        print("running")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -159,7 +161,7 @@ extension SearchViewController {
         guard let desination = segue.destination as? DetailViewController else { return}
         //if nil
         desination.image1 =  DataService.instance.displayImage!
-        desination.photoTitleLabel.text = DataService.instance.photoTitle
+        desination.titleL = DataService.instance.photoTitle
     }
     
 }
